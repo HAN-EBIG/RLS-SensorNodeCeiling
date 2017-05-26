@@ -2,7 +2,7 @@
 #define CHILD_ID_TEMP_MIDDLE 1
 #define CHILD_ID_LIGHT_INTENSITY 9
 #define CHILD_ID_HUMIDITY 12
-#define SLEEP_TIME 30000
+#define SLEEP_TIME 120000
 
 #define MY_DEBUG 
 #define MY_RADIO_NRF24
@@ -13,7 +13,7 @@
 #include <OneWire.h>
 #include <DHT.h>
 
-static const uint8_t FORCE_UPDATE_N_READS = 2;
+static const uint8_t FORCE_UPDATE_N_READS = 5;
 
 // Humidity sensor
 #define DHT_DATA_PIN 4
@@ -66,6 +66,7 @@ void loop()
   processTemperature();
   processHumidity();
   sleep(SLEEP_TIME);
+  
 }
 
 void processHumidity()
