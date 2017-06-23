@@ -2,7 +2,7 @@
  * NodeManager
  */
 
-#include "NodeManager_src.h"
+#include "NodeManager.h"
 
 /***************************************
    Global functions

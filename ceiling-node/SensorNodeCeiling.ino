@@ -5,7 +5,7 @@
 #include <MySensors.h>
 
 // load NodeManager library
-#include "NodeManager"
+#include "NodeManager.h"
 
 // create a NodeManager instance
 NodeManager nodeManager;

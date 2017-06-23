@@ -4,7 +4,7 @@
 /*********************************
  * SENSOR NODE SPECIFICS
  */
-#define SENSOR_1 1 // LDR
+#define SENSOR_1 A1 // LDR
 #define SENSOR_2 2 // PIR SENSOR_MOTION
 #define SENSOR_3 3 // DS18B20 
 #define SENSOR_4 4 // DHT22
