@@ -1,7 +1,7 @@
 /*
  * NodeManager
  */
- 
+
 #ifndef NodeManager_h
 #define NodeManager_h
 
@@ -45,7 +45,7 @@
 /************************************
  * Include user defined configuration settings
  */
- 
+
 #include "config.h"
 
 /***********************************
@@ -54,19 +54,19 @@
 
 // if enabled, will load the sleep manager library. Sleep mode and sleep interval have to be configured to make the board sleeping/waiting
 #ifndef SLEEP_MANAGER
-  #define SLEEP_MANAGER 1
+  #define SLEEP_MANAGER 0
 #endif
 // if enabled, enable the capability to power on sensors with the arduino's pins to save battery while sleeping
 #ifndef POWER_MANAGER
-  #define POWER_MANAGER 1
+  #define POWER_MANAGER 0
 #endif
 // if enabled, will load the battery manager library to allow the battery level to be reported automatically or on demand
 #ifndef BATTERY_MANAGER
-  #define BATTERY_MANAGER 1
+  #define BATTERY_MANAGER 0
 #endif
 // if enabled, allow modifying the configuration remotely by interacting with the configuration child id
 #ifndef REMOTE_CONFIGURATION
-  #define REMOTE_CONFIGURATION 1
+  #define REMOTE_CONFIGURATION 0
 #endif
 // if enabled, persist the configuration settings on EEPROM
 #ifndef PERSIST
@@ -84,7 +84,7 @@
 #endif
 // if enabled, a battery sensor will be created at BATTERY_CHILD_ID and will report vcc voltage together with the battery level percentage
 #ifndef BATTERY_SENSOR
-  #define BATTERY_SENSOR 1
+  #define BATTERY_SENSOR 0
 #endif
 
 // the child id used to allow remote configuration
@@ -204,7 +204,7 @@
 
 // include MySensors libraries
 #include <core/MySensorsCore.h>
-//#include <core/MyHwAVR.h>
+#include <core/MyHwAVR.h>
 //#include <core/MyHwATMega328.h>
 
 // include third party libraries
@@ -479,7 +479,7 @@ class SensorML8511: public Sensor {
   protected:
     float _mapfloat(float x, float in_min, float in_max, float out_min, float out_max);
 };
-  
+
 
 /*
    SensorDigitalInput: read the digital input of the configured pin

@@ -4,40 +4,35 @@
 /*********************************
  * SENSOR NODE SPECIFICS
  */
-#define SENSOR_1 A0 // LDR
-#define SENSOR_2 A1 // LDR
-#define SENSOR_3 2 // PIR SENSOR_MOTION
-#define SENSOR_4 3 // DS18B20 
-#define SENSOR_5 4 // DHT22
+// #define SENSOR_1 A0 // LDR
+// #define SENSOR_2 A1 // LDR
+// #define SENSOR_3 2 // PIR SENSOR_MOTION
+// #define SENSOR_4 3 // DS18B20
+// #define SENSOR_5 4 // DHT22
 
 /**********************************
  * Sketch configuration
  */
-#define SKETCH_NAME "NodeManager"
-#define SKETCH_VERSION "1.1"
+#define SKETCH_NAME "SensorNodeCeiling"
+#define SKETCH_VERSION "1.2"
 
 /**********************************
  * MySensors configuration
  */
 #define MY_BAUD_RATE 115200
-//#define MY_DEBUG
-//#define MY_NODE_ID 100
+#define MY_DEBUG
+#define MY_NODE_ID 102
 
 #define MY_RADIO_NRF24
 //#define MY_RF24_ENABLE_ENCRYPTION
 //#define MY_RF24_CHANNEL 76
 
-//#define MY_RADIO_RFM69
-//#define MY_RFM69_FREQUENCY RF69_868MHZ
-//#define MY_IS_RFM69HW
-//#define MY_RFM69_ENABLE_ENCRYPTION
-//#define MY_RFM69_NETWORKID 100
 /***********************************
  * NodeManager configuration
  */
 
 // if enabled, enable debug messages on serial port
-#define DEBUG 0
+#define DEBUG 1
 
 // if enabled, will load the sleep manager library. Sleep mode and sleep interval have to be configured to make the board sleeping/waiting
 #define SLEEP_MANAGER 0
@@ -67,13 +62,13 @@
 // Enable this module to use one of the following sensors: SENSOR_DIGITAL_OUTPUT, SENSOR_RELAY, SENSOR_LATCHING_RELAY
 #define MODULE_DIGITAL_OUTPUT 0
 // Enable this module to use one of the following sensors: SENSOR_DHT11, SENSOR_DHT22
-#define MODULE_DHT 1
+#define MODULE_DHT 0
 // Enable this module to use one of the following sensors: SENSOR_SHT21
 #define MODULE_SHT21 0
 // Enable this module to use one of the following sensors: SENSOR_SWITCH, SENSOR_DOOR, SENSOR_MOTION
-#define MODULE_SWITCH 1
+#define MODULE_SWITCH 0
 // Enable this module to use one of the following sensors: SENSOR_DS18B20
-#define MODULE_DS18B20 1
+#define MODULE_DS18B20 0
 // Enable this module to use one of the following sensors: SENSOR_BH1750
 #define MODULE_BH1750 0
 // Enable this module to use one of the following sensors: SENSOR_MLX90614
