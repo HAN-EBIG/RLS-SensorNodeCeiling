@@ -547,7 +547,7 @@ class SensorDHT: public Sensor {
     void onReceive(const MyMessage & message);
   protected:
     DHT* _dht;
-    int _dht_type = DHT11;
+    int _dht_type = DHT22;
     float _offset = 0;
     int _sensor_type = 0;
 };
