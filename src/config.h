@@ -2,13 +2,21 @@
 #define config_h
 
 /*********************************
- * SENSOR NODE SPECIFICS
- */
-// #define SENSOR_1 A0 // LDR
-// #define SENSOR_2 A1 // LDR
-// #define SENSOR_3 2 // PIR SENSOR_MOTION
-// #define SENSOR_4 3 // DS18B20
-// #define SENSOR_5 4 // DHT22
+// * SensorNodeCeiling
+// ** sensorpins:
+*/
+#define SENSOR_1 A0 // LDR
+#define SENSOR_2 A1 // LDR
+#define SENSOR_3 2 // PIR SENSOR_MOTION
+#define SENSOR_4 3 // DS18B20
+#define SENSOR_5 4 // DHT22
+
+// ** child-id's :
+#define LDR_1_ID 101
+#define LDR_2_ID 102
+#define PIR_1_ID 103
+#define DS18_1_ID 104
+#define DHT_1_ID 105
 
 /**********************************
  * Sketch configuration

@@ -1,3 +1,4 @@
+/*Dependancies*/
 // load user settings
 #include "config.h"
 
@@ -6,6 +7,9 @@
 
 // load NodeManager library
 #include "NodeManager.h"
+
+#ifndef UNIT_TEST
+//#include <Arduino.h>
 
 // create a NodeManager instance
 NodeManager nodeManager;
@@ -19,7 +23,7 @@ void before() {
 	/****************************
 	* Register below your sensors
 	****************************/
-
+  nodeManager.registerSensor(SENSOR_LDR, A0);
 	//nodeManager.registerSensor(SENSOR_DOOR, SENSOR_1); 		// Registers a magnetic reed switch sensor onto digital pin 2 (interupt)
 	//nodeManager.registerSensor(SENSOR_DOOR, SENSOR_2); 		// Registers a magnetic reed switch sensor onto digital pin 3  (interupt)
 	//nodeManager.registerSensor(SENSOR_DS18B20, SENSOR_3);  	// Registers a DS18B20 Temperature sensor on Digital pin 4
@@ -55,3 +59,5 @@ void receive(const MyMessage &message) {
 	// call NodeManager receive routine
 	nodeManager.receive(message);
 }
+
+#endif //define UNIT_TEST
