@@ -24,7 +24,10 @@ void before()
 	/****************************
 	* Register below your sensors
 	****************************/
-	nodeManager.setSleepMode(ALWAYS_ON);
+	nodeManager.setSleepMode(SLEEP);
+	nodeManager.setSleepTime(10);
+	nodeManager.setSleepUnit(SECONDS);
+
 	//nodeManager.setSleepBetweenSend(10000);
   nodeManager.registerSensor(SENSOR_LDR, 			SENSOR_1, LDR_1_ID);
 	nodeManager.registerSensor(SENSOR_LDR, 			SENSOR_2, LDR_2_ID);
