@@ -26,14 +26,14 @@
  * Sketch configuration
  */
 #define SKETCH_NAME "SensorNodeCeiling"
-#define SKETCH_VERSION "1.6"
+#define SKETCH_VERSION "1.7"
 
 /**********************************
  * MySensors configuration
  */
 #define MY_BAUD_RATE 115200
-//#define MY_DEBUG
-#define MY_NODE_ID 111
+#define MY_DEBUG
+#define MY_NODE_ID 112
 
 #define MY_RADIO_NRF24
 //#define MY_RF24_ENABLE_ENCRYPTION
@@ -44,7 +44,7 @@
  */
 
 // if enabled, enable debug messages on serial port
-//#define DEBUG 1
+#define DEBUG 0
 
 // if enabled, will load the sleep manager library. Sleep mode and sleep interval have to be configured to make the board sleeping/waiting
 #define SLEEP_MANAGER 1
