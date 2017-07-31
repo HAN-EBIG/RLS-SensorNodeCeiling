@@ -1,37 +1,44 @@
 #ifndef config_h
 #define config_h
 
+//#define UNIT_TEST
+
 /*********************************
- * SENSOR NODE SPECIFICS
- */
+// * SensorNodeCeiling
+// ** sensorpins:
+*/
 #define SENSOR_1 A0 // LDR
 #define SENSOR_2 A1 // LDR
+
 #define SENSOR_3 2 // PIR SENSOR_MOTION
-#define SENSOR_4 3 // DS18B20 
-#define SENSOR_5 4 // DHT22
+
+#define SENSOR_4 4 // DS18B20
+#define SENSOR_5 5 // DHT22
+
+// ** child-id's :
+#define LDR_1_ID 101
+#define LDR_2_ID 102
+#define PIR_1_ID 103
+#define DS18_1_ID 104
+#define DHT_1_ID 105
 
 /**********************************
  * Sketch configuration
  */
-#define SKETCH_NAME "NodeManager"
-#define SKETCH_VERSION "1.1"
+#define SKETCH_NAME "SensorNodeCeiling"
+#define SKETCH_VERSION "1.7"
 
 /**********************************
  * MySensors configuration
  */
 #define MY_BAUD_RATE 115200
-//#define MY_DEBUG
-//#define MY_NODE_ID 100
+#define MY_DEBUG
+#define MY_NODE_ID 112
 
 #define MY_RADIO_NRF24
 //#define MY_RF24_ENABLE_ENCRYPTION
 //#define MY_RF24_CHANNEL 76
 
-//#define MY_RADIO_RFM69
-//#define MY_RFM69_FREQUENCY RF69_868MHZ
-//#define MY_IS_RFM69HW
-//#define MY_RFM69_ENABLE_ENCRYPTION
-//#define MY_RFM69_NETWORKID 100
 /***********************************
  * NodeManager configuration
  */
@@ -40,7 +47,7 @@
 #define DEBUG 0
 
 // if enabled, will load the sleep manager library. Sleep mode and sleep interval have to be configured to make the board sleeping/waiting
-#define SLEEP_MANAGER 0
+#define SLEEP_MANAGER 1
 
 // if enabled, enable the capability to power on sensors with the arduino's pins to save battery while sleeping
 #define POWER_MANAGER 0
@@ -55,7 +62,7 @@
 #define PERSIST 0
 
 // if enabled, send a SLEEPING and AWAKE service messages just before entering and just after leaving a sleep cycle and STARTED when starting/rebooting
-#define SERVICE_MESSAGES 0
+#define SERVICE_MESSAGES 1
 
 // if enabled, a battery sensor will be created at BATTERY_CHILD_ID and will report vcc voltage together with the battery level percentage
 #define BATTERY_SENSOR 0
