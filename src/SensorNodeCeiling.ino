@@ -43,7 +43,7 @@ void before()
 	// NM-sensor:[14], sensor-id:[4], child-id:104
 	nodeManager.registerSensor(SENSOR_DS18B20, 	SENSOR_4, DS18_1_ID);
 
-	// NM-sensor:[9], sensor-id:[5], child-id:101
+	// NM-sensor:[9], sensor-id:[5], child-id:105
 	nodeManager.registerSensor(SENSOR_DHT22, 		SENSOR_5, DHT_1_ID);
 
 	/****************************
@@ -52,7 +52,7 @@ void before()
 	nodeManager.before();
 
 	nodeManager.setSleepMode(SLEEP);
-	nodeManager.setSleepTime(20);
+	nodeManager.setSleepTime(SLEEP_TIME_IN_SECONDS);
 	nodeManager.setSleepUnit(SECONDS);
 }
 
@@ -95,11 +95,6 @@ void loop()
 	nodeManager.loop();
 }
 
-// 	if ()
-// 	{
-// 			Serial.println(" == -- Loop activated -- == ");
-// 	}
-// }
 
 /*******************************************************************************
 * receive

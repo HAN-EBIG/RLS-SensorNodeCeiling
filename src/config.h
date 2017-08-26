@@ -9,9 +9,7 @@
 */
 #define SENSOR_1 A0 // LDR
 #define SENSOR_2 A1 // LDR
-
 #define SENSOR_3 2 // PIR SENSOR_MOTION
-
 #define SENSOR_4 4 // DS18B20
 #define SENSOR_5 5 // DHT22
 
@@ -25,15 +23,16 @@
 /**********************************
  * Sketch configuration
  */
-#define SKETCH_NAME "SensorNodeCeiling"
-#define SKETCH_VERSION "1.7"
+#define SKETCH_NAME "CEILING Room A "
+#define SKETCH_VERSION "1.8"
+#define SLEEP_TIME_IN_SECONDS 5
 
 /**********************************
  * MySensors configuration
  */
 #define MY_BAUD_RATE 115200
-#define MY_DEBUG
-#define MY_NODE_ID 112
+//#define MY_DEBUG
+#define MY_NODE_ID 120
 
 #define MY_RADIO_NRF24
 //#define MY_RF24_ENABLE_ENCRYPTION

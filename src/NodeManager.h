@@ -31,8 +31,8 @@
 #define TYPE_STRING 2
 
 // define interrupt pins
-#define INTERRUPT_PIN_1 3
-#define INTERRUPT_PIN_2 2
+#define INTERRUPT_PIN_1 2
+#define INTERRUPT_PIN_2 3
 
 // define eeprom addresses
 #define EEPROM_LAST_ID 4
