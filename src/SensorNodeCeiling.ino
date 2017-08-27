@@ -81,8 +81,8 @@ void setup()
 	Serial.println("..Systems ready..");
 
 	//get the address of the DS18B20
-	((SensorDs18b20*)nodeManager.getSensor(SENSOR_2))->getDeviceAddress();
-	((SensorDs18b20*)nodeManager.getSensor(SENSOR_2))->getResolution();
+	//((SensorDs18b20*)nodeManager.getSensor(SENSOR_2))->getDeviceAddress();
+	//((SensorDs18b20*)nodeManager.getSensor(SENSOR_2))->getResolution();
 }
 
 

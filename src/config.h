@@ -32,7 +32,11 @@
  */
 #define MY_BAUD_RATE 115200
 //#define MY_DEBUG
-#define MY_NODE_ID 120
+#define MY_NODE_ID 10
+//#define MY_NODE_ID 20
+//#define MY_NODE_ID 30
+//#define MY_NODE_ID 40
+//#define MY_NODE_ID 50
 
 #define MY_RADIO_NRF24
 //#define MY_RF24_ENABLE_ENCRYPTION
