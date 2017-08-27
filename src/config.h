@@ -23,7 +23,7 @@
 /**********************************
  * Sketch configuration
  */
-#define SKETCH_NAME "CEILING Room A "
+#define SKETCH_NAME "CEILING Room C "
 #define SKETCH_VERSION "1.8"
 #define SLEEP_TIME_IN_SECONDS 5
 
@@ -32,11 +32,11 @@
  */
 #define MY_BAUD_RATE 115200
 //#define MY_DEBUG
-#define MY_NODE_ID 10
-//#define MY_NODE_ID 20
-//#define MY_NODE_ID 30
-//#define MY_NODE_ID 40
-//#define MY_NODE_ID 50
+//#define MY_NODE_ID 10 /*  [V]  */
+//#define MY_NODE_ID 20 /*  [V]  */
+//#define MY_NODE_ID 30 /*  [V]  */
+#define MY_NODE_ID 40 /*  []  */
+//#define MY_NODE_ID 50 /*  []  */
 
 #define MY_RADIO_NRF24
 //#define MY_RF24_ENABLE_ENCRYPTION
