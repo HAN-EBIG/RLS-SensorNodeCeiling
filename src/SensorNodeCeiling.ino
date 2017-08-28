@@ -38,7 +38,7 @@ void before()
 	nodeManager.registerSensor(SENSOR_LDR, 			SENSOR_2, LDR_2_ID);
 
 	// NM-sensor:[13], sensor-id:[3], child-id:103
-	nodeManager.registerSensor(SENSOR_MOTION, 	SENSOR_3, PIR_1_ID);
+	//nodeManager.registerSensor(SENSOR_MOTION, 	SENSOR_3, PIR_1_ID);
 
 	// NM-sensor:[14], sensor-id:[4], child-id:104
 	nodeManager.registerSensor(SENSOR_DS18B20, 	SENSOR_4, DS18_1_ID);

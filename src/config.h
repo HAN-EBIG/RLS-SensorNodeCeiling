@@ -14,11 +14,11 @@
 #define SENSOR_5 5 // DHT22
 
 // ** child-id's :
-#define LDR_1_ID 101
-#define LDR_2_ID 102
-#define PIR_1_ID 103
-#define DS18_1_ID 104
-#define DHT_1_ID 105
+#define LDR_1_ID 20
+#define LDR_2_ID 21
+//#define PIR_1_ID 103
+#define DS18_1_ID 1
+#define DHT_1_ID 35
 
 /**********************************
  * Sketch configuration
@@ -32,10 +32,10 @@
  */
 #define MY_BAUD_RATE 115200
 //#define MY_DEBUG
-//#define MY_NODE_ID 10 /*  [V]  */
+#define MY_NODE_ID 12 /*  [V]  */
 //#define MY_NODE_ID 20 /*  [V]  */
 //#define MY_NODE_ID 30 /*  [V]  */
-#define MY_NODE_ID 40 /*  []  */
+//#define MY_NODE_ID 40 /*  []  */
 //#define MY_NODE_ID 50 /*  []  */
 
 #define MY_RADIO_NRF24
