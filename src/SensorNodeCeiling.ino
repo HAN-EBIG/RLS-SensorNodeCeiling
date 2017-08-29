@@ -43,26 +43,30 @@ void before()
 	* Register below your sensors
 	****************************/
 	//TODO Remove hardcoded pin_numbers
-	nodeManager.registerSensor(SENSOR_LDR, A0); //LDR_1_ID
-	//nodeManager.registerSensor(SENSOR_LDR, A1); //LDR_2_ID
+	//int sensor_ldr_room = nodeManager.registerSensor(SENSOR_LDR, A0, LDR_1_ID); //LDR_1_ID
+	nodeManager.registerSensor(SENSOR_LDR, A0, LDR_1_ID);
+	//int sensor_ldr_beamer = nodeManager.registerSensor(SENSOR_LDR, A1, LDR_2_ID); //LDR_2_ID
+	nodeManager.registerSensor(SENSOR_LDR, A1, LDR_2_ID);
+
 	//nodeManager.registerSensor(SENSOR_MOTION, 	SENSOR_3, PIR_1_ID);
-	nodeManager.registerSensor(SENSOR_DS18B20, 	5);
-	nodeManager.registerSensor(SENSOR_DHT22, 4); //, DHT_1_ID
+
+	//float sensor_ds18b20 = nodeManager.registerSensor(SENSOR_DS18B20, 	5);
+	nodeManager.registerSensor(SENSOR_DS18B20, 	5, DS18_1_ID);
+
+
+
+	// TODO CANNOT Get THE CORRECT CHILD-ID'S
+	//int sensor_dht22 = nodeManager.registerSensor(SENSOR_DHT22, 4); //, DHT_1_ID
+	nodeManager.registerSensor(SENSOR_DHT22, 4, DHT_1_ID);
+	//((SensorDHT*)nodeManager.getSensor(sensor_dht22)->getType();
+
 	/****************************
 	* Register above your sensors
 	****************************/
 	nodeManager.before();
 
-	int sensor_ldr = nodeManager.registerSensor(SENSOR_LDR,A1);
- ((SensorLDR*)nodeManager.getSensor(sensor_ldr))->setSamples(3);
-
- 	//TODO: change position of sleep funtions inside the before() loop
-	/*
-	nodeManager.setSleepMode(SLEEP);
-	nodeManager.setSleepTime(SLEEP_TIME_IN_SECONDS);
-	nodeManager.setSleepUnit(SECONDS);
-	*/
-	//TODO
+	//int sensor_ldr = nodeManager.registerSensor(SENSOR_LDR,A1);
+ //((SensorLDR*)nodeManager.getSensor(sensor_ldr))->setSamples(3);
 }
 
 /*******************************************************************************
@@ -90,7 +94,7 @@ void setup()
 	#endif
 
 	//get the address of the DS18B20
-	//((SensorDs18b20*)nodeManager.getSensor(SENSOR_2))->getDeviceAddress();
+	//int deviceAdress = ((SensorDs18b20*)nodeManager.getSensor(SENSOR_2))->getDeviceAddress();
 	//((SensorDs18b20*)nodeManager.getSensor(SENSOR_2))->getResolution();
 }
 
@@ -103,9 +107,17 @@ void loop()
 	// call NodeManager loop routine
 	nodeManager.loop();
 
-	//processTemperature();
-	//procesLight();
-	//procesHumidity();
+	#ifdef CUSTOM_DS18B20
+		processTemperature();
+	#endif
+
+	#ifdef CUSTOM_LDR
+		procesLight();
+	#endif
+
+	#ifdef CUSTOM_DHT22
+		procesHumidity();
+	#endif
 }
 
 

@@ -10,8 +10,8 @@
 #define SENSOR_1 A0 // LDR
 #define SENSOR_2 A1 // LDR
 //#define SENSOR_3 2 // PIR SENSOR_MOTION
-//#define SENSOR_4 4 // DS18B20
-//#define SENSOR_5 5 // DHT22
+#define SENSOR_4 4 // dht22
+//#define SENSOR_5 5 // Ds18b20
 
 // ** child-id's :
 #define LDR_1_ID 20
@@ -19,12 +19,13 @@
 //#define PIR_1_ID 103
 #define DS18_1_ID 1
 #define DHT_1_ID 35
+#define DHT_2_ID 36
 
 /**********************************
  * Sketch configuration
  */
-#define SKETCH_NAME "Ceiling Node -A.XY- "
-#define SKETCH_VERSION "1.9"
+#define SKETCH_NAME "Ceiling Node -A.42- "
+#define SKETCH_VERSION "2.0"
 #define SLEEP_TIME_IN_SECONDS 5
 
 /**********************************
