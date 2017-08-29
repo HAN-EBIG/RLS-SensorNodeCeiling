@@ -9,9 +9,9 @@
 */
 #define SENSOR_1 A0 // LDR
 #define SENSOR_2 A1 // LDR
-#define SENSOR_3 2 // PIR SENSOR_MOTION
-#define SENSOR_4 4 // DS18B20
-#define SENSOR_5 5 // DHT22
+//#define SENSOR_3 2 // PIR SENSOR_MOTION
+//#define SENSOR_4 4 // DS18B20
+//#define SENSOR_5 5 // DHT22
 
 // ** child-id's :
 #define LDR_1_ID 20
@@ -23,20 +23,20 @@
 /**********************************
  * Sketch configuration
  */
-#define SKETCH_NAME "CEILING Room C "
-#define SKETCH_VERSION "1.8"
-#define SLEEP_TIME_IN_SECONDS 5
+#define SKETCH_NAME "Ceiling Node D1.04 "
+#define SKETCH_VERSION "1.9"
+#define SLEEP_TIME_IN_SECONDS 1
 
 /**********************************
  * MySensors configuration
  */
 #define MY_BAUD_RATE 115200
 //#define MY_DEBUG
-#define MY_NODE_ID 12 /*  [V]  */
-//#define MY_NODE_ID 20 /*  [V]  */
-//#define MY_NODE_ID 30 /*  [V]  */
-//#define MY_NODE_ID 40 /*  []  */
-//#define MY_NODE_ID 50 /*  []  */
+//#define MY_NODE_ID 12 /*  [V]  */
+#define MY_NODE_ID 22 /*  []  */
+//#define MY_NODE_ID 32 /*  []  */
+//#define MY_NODE_ID 42 /*  []  */
+//#define MY_NODE_ID 52 /*  []  */
 
 #define MY_RADIO_NRF24
 //#define MY_RF24_ENABLE_ENCRYPTION
@@ -53,7 +53,7 @@
 #define SLEEP_MANAGER 1
 
 // if enabled, enable the capability to power on sensors with the arduino's pins to save battery while sleeping
-#define POWER_MANAGER 0
+#define POWER_MANAGER 1
 
 // if enabled, will load the battery manager library to allow the battery level to be reported automatically or on demand
 #define BATTERY_MANAGER 0
@@ -65,7 +65,7 @@
 #define PERSIST 0
 
 // if enabled, send a SLEEPING and AWAKE service messages just before entering and just after leaving a sleep cycle and STARTED when starting/rebooting
-#define SERVICE_MESSAGES 1
+#define SERVICE_MESSAGES 0
 
 // if enabled, a battery sensor will be created at BATTERY_CHILD_ID and will report vcc voltage together with the battery level percentage
 #define BATTERY_SENSOR 0
@@ -81,7 +81,7 @@
 // Enable this module to use one of the following sensors: SENSOR_SHT21
 #define MODULE_SHT21 0
 // Enable this module to use one of the following sensors: SENSOR_SWITCH, SENSOR_DOOR, SENSOR_MOTION
-#define MODULE_SWITCH 1
+#define MODULE_SWITCH 0
 // Enable this module to use one of the following sensors: SENSOR_DS18B20
 #define MODULE_DS18B20 1
 // Enable this module to use one of the following sensors: SENSOR_BH1750
