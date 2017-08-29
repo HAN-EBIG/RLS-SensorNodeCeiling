@@ -165,7 +165,7 @@ void Sensor::setSleepBetweenSend(int value) {
 // present the sensor to the gateway and controller
 void Sensor::presentation() {
   #if DEBUG == 1
-    Serial.print(F("PRES I="));
+    Serial.print(F("PRESENT SENSOR="));
     Serial.print(_child_id);
     Serial.print(F(" T="));
     Serial.println(_presentation);
@@ -213,7 +213,7 @@ void Sensor::loop(const MyMessage & message) {
     // wait between samples
     if (_samples_interval > 0) wait(_samples_interval);
   }
-  // process the result and send a response back. 
+  // process the result and send a response back.
   if (_value_type == TYPE_INTEGER && total > -1) {
     // if the value is an integer, calculate the average value of the samples
     int avg = (int) (total / _samples);
@@ -480,13 +480,13 @@ void SensorML8511::onSetup() {
 
 // what do to during loop
 void SensorML8511::onLoop() {
-  // read the voltage 
+  // read the voltage
   int uvLevel = analogRead(_pin);
   int refLevel = getVcc()*1024/3.3;
   //Use the 3.3V power pin as a reference to get a very accurate output value from sensor
   float outputVoltage = 3.3 / refLevel * uvLevel;
   //Convert the voltage to a UV intensity level
-  float uvIntensity = _mapfloat(outputVoltage, 0.99, 2.8, 0.0, 15.0); 
+  float uvIntensity = _mapfloat(outputVoltage, 0.99, 2.8, 0.0, 15.0);
   #if DEBUG == 1
     Serial.print(F("UV I="));
     Serial.print(_child_id);
@@ -611,12 +611,12 @@ float SensorMQ::_MQCalibration() {
   int i;
   float val=0;
   //take multiple samples
-  for (i=0; i< _calibration_sample_times; i++) {  
+  for (i=0; i< _calibration_sample_times; i++) {
     val += _MQResistanceCalculation(analogRead(_pin));
     delay(_calibration_sample_interval);
   }
   //calculate the average value
-  val = val/_calibration_sample_times;                   
+  val = val/_calibration_sample_times;
   //divided by RO_CLEAN_AIR_FACTOR yields the Ro
   val = val/_ro_clean_air_factor;
   //according to the chart in the datasheet
@@ -934,7 +934,7 @@ void SensorSHT21::onReceive(const MyMessage & message) {
 // constructor
 SensorHTU21D::SensorHTU21D(int child_id, int pin): SensorSHT21(child_id, pin) {
 }
-#endif 
+#endif
 
 /*
  * SensorSwitch
@@ -1957,9 +1957,7 @@ int NodeManager::_getAvailableChildId() {
 
 // guess the initial value of a digital output based on the configured interrupt mode
 int NodeManager::_getInterruptInitialValue(int mode) {
-  if (mode == RISING) return LOW; 
-  if (mode == FALLING) return HIGH; 
+  if (mode == RISING) return LOW;
+  if (mode == FALLING) return HIGH;
   return -1;
 }
-
-
