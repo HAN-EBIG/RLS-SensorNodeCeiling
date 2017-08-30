@@ -16,17 +16,18 @@
 #include <DHT.h>
 #include <DHT_U.h>
 
-//@override, remove // to use custom implementation of sensors
-//#define CUSTOM_LDR
-//#define CUSTOM_DHT22
-//#define CUSTOM_DS18B20
-
 //Define Sensors, normal way of registering the sensors on the ceiling node
 #define LDR_ROOM
 #define LDR_BEAMER
 #define DHT_CEILING
 #define DS18B20_CEILING
 //#define PIR_CEILING
+
+
+//@override, remove // to use custom implementation of sensors
+//#define CUSTOM_LDR
+//#define CUSTOM_DHT22
+//#define CUSTOM_DS18B20
 
 /*******************************************************************************
 * instances
@@ -48,9 +49,8 @@ void before()
 	* Register below your sensors
 	****************************/
 	#ifdef LDR_ROOM
-		//int sensor_ldr_room = nodeManager.registerSensor(SENSOR_LDR, A0, LDR_1_ID); //LDR_1_ID
+		//int sensor_ldr_room = nodeManager.regis§terSensor(SENSOR_LDR, A0, LDR_1_ID); //LDR_1_ID
 		nodeManager.registerSensor(SENSOR_LDR, A0, LDR_1_ID);
-
 		//int sensor_ldr = nodeManager.registerSensor(SENSOR_LDR,A1);
 		//((SensorLDR*)nodeManager.getSensor(sensor_ldr))->setSamples(3);
 	#endif
@@ -64,15 +64,15 @@ void before()
 		nodeManager.registerSensor(SENSOR_MOTION, 	SENSOR_3, PIR_1_ID);
 	#endif
 
-	#ifdef DS18B20_CEILING
+	// #ifdef DS18B20_CEILING
 		//float sensor_ds18b20 = nodeManager.registerSensor(SENSOR_DS18B20, 	5);
-		nodeManager.registerSensor(SENSOR_DS18B20, 	5, DS18_1_ID);
-	#endif
+		nodeManager.registerSensor(SENSOR_DS18B20, 	4);
+	// #endif
 
 	#ifdef DHT_CEILING
 		// TODO CANNOT Get THE CORRECT CHILD-ID'S
 		//int sensor_dht22 = nodeManager.registerSensor(SENSOR_DHT22, 4); //, DHT_1_ID
-		nodeManager.registerSensor(SENSOR_DHT22, 4, DHT_1_ID);
+		nodeManager.registerSensor(SENSOR_DHT22, 3, 35);
 		//((SensorDHT*)nodeManager.getSensor(sensor_dht22)->getType();
 	#endif
 

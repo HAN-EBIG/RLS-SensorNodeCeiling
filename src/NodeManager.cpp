@@ -846,7 +846,11 @@ void SensorDHT::onLoop() {
       Serial.println(humidity);
     #endif
     // store the value
-    if (! isnan(humidity)) _value_float = humidity;
+    if (! isnan(humidity)){
+       _value_float = humidity;
+     } else {
+        _value_float = -1;
+     }
   }
 }
 
@@ -1371,8 +1375,8 @@ int NodeManager::registerSensor(int sensor_type, int pin, int child_id) {
     else if (sensor_type == SENSOR_DHT11 || sensor_type == SENSOR_DHT22) {
       int dht_type = sensor_type == SENSOR_DHT11 ? DHT11 : DHT22;
       DHT* dht = new DHT(pin,dht_type);
-      registerSensor(new SensorDHT(child_id,pin,dht,0,dht_type));
-      child_id = _getAvailableChildId();
+      //registerSensor(new SensorDHT(child_id,pin,dht,0,dht_type));
+      //child_id = _getAvailableChildId();
       return registerSensor(new SensorDHT(child_id,pin,dht,1,dht_type));
     }
   #endif
@@ -1414,7 +1418,9 @@ int NodeManager::registerSensor(int sensor_type, int pin, int child_id) {
       // register a new child for each sensor on the bus
       for(int i = 0; i < sensors->getDeviceCount(); i++) {
         if (i > 0) child_id = _getAvailableChildId();
-        index = registerSensor(new SensorDs18b20(child_id,pin,sensors,i));
+    //    index = registerSensor(new SensorDs18b20(child_id,pin,sensors,i));
+        index = registerSensor(new SensorDs18b20(1,pin,sensors,i));
+
       }
       return index;
     }

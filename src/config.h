@@ -11,7 +11,7 @@
 #define SENSOR_2 A1 // LDR
 //#define SENSOR_3 2 // PIR SENSOR_MOTION
 #define SENSOR_4 4 // dht22
-//#define SENSOR_5 5 // Ds18b20
+#define SENSOR_5 5 // Ds18b20
 
 // ** child-id's :
 #define LDR_1_ID 20
@@ -24,9 +24,9 @@
 /**********************************
  * Sketch configuration
  */
-#define SKETCH_NAME "Ceiling Node -A.42- "
+#define SKETCH_NAME "Ceiling Node -D1.12- "
 #define SKETCH_VERSION "2.0"
-#define SLEEP_TIME_IN_SECONDS 5
+#define SLEEP_TIME_IN_SECONDS 90
 
 /**********************************
  * MySensors configuration
@@ -34,9 +34,9 @@
 #define MY_BAUD_RATE 115200
 //#define MY_DEBUG
 //#define MY_NODE_ID 12 /*  [ X ]  */
-//#define MY_NODE_ID 22 /*  [ X ]  */
+#define MY_NODE_ID 22 /*  [ X ]  */
 //#define MY_NODE_ID 32 /*  [ X ]  */
-#define MY_NODE_ID 42 /*  []  */
+//#define MY_NODE_ID 42 /*  []  */
 //#define MY_NODE_ID 52 /*  []  */
 
 #define MY_RADIO_NRF24
@@ -66,7 +66,7 @@
 #define PERSIST 0
 
 // if enabled, send a SLEEPING and AWAKE service messages just before entering and just after leaving a sleep cycle and STARTED when starting/rebooting
-#define SERVICE_MESSAGES 1
+#define SERVICE_MESSAGES 0
 
 // if enabled, a battery sensor will be created at BATTERY_CHILD_ID and will report vcc voltage together with the battery level percentage
 #define BATTERY_SENSOR 0
