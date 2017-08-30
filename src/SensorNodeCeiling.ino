@@ -21,19 +21,24 @@
 //#define CUSTOM_DHT22
 //#define CUSTOM_DS18B20
 
+//Define Sensors, normal way of registering the sensors on the ceiling node
+#define LDR_ROOM
+#define LDR_BEAMER
+#define DHT_CEILING
+#define DS18B20_CEILING
+//#define PIR_CEILING
+
 /*******************************************************************************
 * instances
 ********************************************************************************/
 NodeManager nodeManager; // create a NodeManager instance
 
-//int interrupt_pin_1 = getInterruptPin();
 /*******************************************************************************
 * before
 ********************************************************************************/
 void before()
 {
 	Serial.begin(MY_BAUD_RATE); // setup the serial port baud rate
-
 
 	nodeManager.setSleepMode(SLEEP);
 	nodeManager.setSleepTime(SLEEP_TIME_IN_SECONDS);
@@ -42,31 +47,40 @@ void before()
 	/****************************
 	* Register below your sensors
 	****************************/
-	//TODO Remove hardcoded pin_numbers
-	//int sensor_ldr_room = nodeManager.registerSensor(SENSOR_LDR, A0, LDR_1_ID); //LDR_1_ID
-	nodeManager.registerSensor(SENSOR_LDR, A0, LDR_1_ID);
-	//int sensor_ldr_beamer = nodeManager.registerSensor(SENSOR_LDR, A1, LDR_2_ID); //LDR_2_ID
-	nodeManager.registerSensor(SENSOR_LDR, A1, LDR_2_ID);
+	#ifdef LDR_ROOM
+		//int sensor_ldr_room = nodeManager.registerSensor(SENSOR_LDR, A0, LDR_1_ID); //LDR_1_ID
+		nodeManager.registerSensor(SENSOR_LDR, A0, LDR_1_ID);
 
-	//nodeManager.registerSensor(SENSOR_MOTION, 	SENSOR_3, PIR_1_ID);
+		//int sensor_ldr = nodeManager.registerSensor(SENSOR_LDR,A1);
+		//((SensorLDR*)nodeManager.getSensor(sensor_ldr))->setSamples(3);
+	#endif
 
-	//float sensor_ds18b20 = nodeManager.registerSensor(SENSOR_DS18B20, 	5);
-	nodeManager.registerSensor(SENSOR_DS18B20, 	5, DS18_1_ID);
+	#ifdef LDR_BEAMER
+		//int sensor_ldr_beamer = nodeManager.registerSensor(SENSOR_LDR, A1, LDR_2_ID); //LDR_2_ID
+		nodeManager.registerSensor(SENSOR_LDR, A1, LDR_2_ID);
+	#endif
 
+	#ifdef PIR_CEILING
+		nodeManager.registerSensor(SENSOR_MOTION, 	SENSOR_3, PIR_1_ID);
+	#endif
 
+	#ifdef DS18B20_CEILING
+		//float sensor_ds18b20 = nodeManager.registerSensor(SENSOR_DS18B20, 	5);
+		nodeManager.registerSensor(SENSOR_DS18B20, 	5, DS18_1_ID);
+	#endif
 
-	// TODO CANNOT Get THE CORRECT CHILD-ID'S
-	//int sensor_dht22 = nodeManager.registerSensor(SENSOR_DHT22, 4); //, DHT_1_ID
-	nodeManager.registerSensor(SENSOR_DHT22, 4, DHT_1_ID);
-	//((SensorDHT*)nodeManager.getSensor(sensor_dht22)->getType();
+	#ifdef DHT_CEILING
+		// TODO CANNOT Get THE CORRECT CHILD-ID'S
+		//int sensor_dht22 = nodeManager.registerSensor(SENSOR_DHT22, 4); //, DHT_1_ID
+		nodeManager.registerSensor(SENSOR_DHT22, 4, DHT_1_ID);
+		//((SensorDHT*)nodeManager.getSensor(sensor_dht22)->getType();
+	#endif
 
 	/****************************
 	* Register above your sensors
 	****************************/
 	nodeManager.before();
 
-	//int sensor_ldr = nodeManager.registerSensor(SENSOR_LDR,A1);
- //((SensorLDR*)nodeManager.getSensor(sensor_ldr))->setSamples(3);
 }
 
 /*******************************************************************************
@@ -129,8 +143,6 @@ void receive(const MyMessage &message)
 	// call NodeManager receive routine
 	nodeManager.receive(message);
 }
-
-
 
 //CUSTOM IMPLEMENTATIONS
 /*******************************************************************************
