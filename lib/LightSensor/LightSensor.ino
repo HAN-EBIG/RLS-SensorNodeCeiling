@@ -25,7 +25,7 @@
  * Example sketch showing how to measue light level using a LM393 photo-resistor
  * http://www.mysensors.org/build/light
  */
-
+/*
 // Enable debug prints to serial monitor
 #define MY_DEBUG
 
@@ -63,6 +63,4 @@ void loop()
 	}
 	sleep(SLEEP_TIME);
 }
-
-
-
+*/
