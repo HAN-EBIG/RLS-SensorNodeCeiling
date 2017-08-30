@@ -13,14 +13,14 @@
 #include "NodeManager.h"
 
 //TODO check if the 3 includes below are indeed obsolete
-//#include <Adafruit_Sensor.h>
-//#include <DHT.h>
-//#include <DHT_U.h>
+#include <Adafruit_Sensor.h>
+#include <DHT.h>
+#include <DHT_U.h>
 
 //Define Sensors, normal way of registering the sensors on the ceiling node
 #define LDR_ROOM
 #define LDR_BEAMER
-#define DHT_CEILING
+//#define DHT_CEILING
 #define DS18B20_CEILING
 //#define PIR_CEILING
 
@@ -50,15 +50,15 @@ void before()
 	* Register below your sensors
 	****************************/
 	#ifdef LDR_ROOM
-		//int sensor_ldr_room = nodeManager.regis§terSensor(SENSOR_LDR, A0, LDR_1_ID); //LDR_1_ID
-		nodeManager.registerSensor(SENSOR_LDR, A0, LDR_1_ID);
-		//int sensor_ldr = nodeManager.registerSensor(SENSOR_LDR,A1);
-		//((SensorLDR*)nodeManager.getSensor(sensor_ldr))->setSamples(3);
+		int sensor_ldr_room = nodeManager.registerSensor(SENSOR_LDR, A0, LDR_1_ID); //LDR_1_ID
+		//nodeManager.registerSensor(SENSOR_LDR, A0, LDR_1_ID);
+		((SensorLDR*)nodeManager.getSensor(sensor_ldr_room))->setReverse(true);
 	#endif
 
 	#ifdef LDR_BEAMER
-		//int sensor_ldr_beamer = nodeManager.registerSensor(SENSOR_LDR, A1, LDR_2_ID); //LDR_2_ID
-		nodeManager.registerSensor(SENSOR_LDR, A1, LDR_2_ID);
+		int sensor_ldr_beamer = nodeManager.registerSensor(SENSOR_LDR, A1, LDR_2_ID); //LDR_2_ID
+		//nodeManager.registerSensor(SENSOR_LDR, A1, LDR_2_ID);
+		((SensorLDR*)nodeManager.getSensor(sensor_ldr_beamer)) ->setReverse(true);
 	#endif
 
 	#ifdef PIR_CEILING
@@ -76,6 +76,9 @@ void before()
 		nodeManager.registerSensor(SENSOR_DHT22, 3, 35);
 		//((SensorDHT*)nodeManager.getSensor(sensor_dht22)->getType();
 	#endif
+
+
+
 
 	/****************************
 	* Register above your sensors
@@ -100,7 +103,7 @@ void presentation()
 ********************************************************************************/
 void setup()
 {
-	// call NodeManager setup routine
+	// call NodeManager setup §routine
 	nodeManager.setup();
 
 	#ifdef CUSTOM_DHT22

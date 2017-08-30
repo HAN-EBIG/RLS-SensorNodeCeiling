@@ -1,0 +1,6 @@
+ld: warning: ignoring file /Users/jornbrouwer/Programeren/RLS-SensorNodeCeiling/src/SensorNodeCeiling.ino, file was built for unsupported file format ( 0x0A 0x23 0x69 0x66 0x6E 0x64 0x65 0x66 0x20 0x55 0x4E 0x49 0x54 0x5F 0x54 0x45 ) which is not the architecture being linked (x86_64): /Users/jornbrouwer/Programeren/RLS-SensorNodeCeiling/src/SensorNodeCeiling.ino
+Undefined symbols for architecture x86_64:
+  "_main", referenced from:
+     implicit entry/start for main executable
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)

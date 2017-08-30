@@ -26,7 +26,7 @@
  */
 #define SKETCH_NAME "Ceiling Node -D1.12- "
 #define SKETCH_VERSION "2.0"
-#define SLEEP_TIME_IN_SECONDS 90
+#define SLEEP_TIME_IN_SECONDS 2
 
 /**********************************
  * MySensors configuration
@@ -34,10 +34,10 @@
 #define MY_BAUD_RATE 115200
 //#define MY_DEBUG
 //#define MY_NODE_ID 12 /*  [ X ]  */
-#define MY_NODE_ID 22 /*  [ X ]  */
+//#define MY_NODE_ID 22 /*  [ X ]  */
 //#define MY_NODE_ID 32 /*  [ X ]  */
 //#define MY_NODE_ID 42 /*  []  */
-//#define MY_NODE_ID 52 /*  []  */
+#define MY_NODE_ID 52 /*  []  */
 
 #define MY_RADIO_NRF24
 //#define MY_RF24_ENABLE_ENCRYPTION
@@ -60,13 +60,13 @@
 #define BATTERY_MANAGER 0
 
 // if enabled, allow modifying the configuration remotely by interacting with the configuration child id
-#define REMOTE_CONFIGURATION 0
+#define REMOTE_CONFIGURATION 1
 
 // if enabled, persist the remote configuration settings on EEPROM
 #define PERSIST 0
 
 // if enabled, send a SLEEPING and AWAKE service messages just before entering and just after leaving a sleep cycle and STARTED when starting/rebooting
-#define SERVICE_MESSAGES 0
+#define SERVICE_MESSAGES 1
 
 // if enabled, a battery sensor will be created at BATTERY_CHILD_ID and will report vcc voltage together with the battery level percentage
 #define BATTERY_SENSOR 0
