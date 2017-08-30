@@ -12,9 +12,10 @@
 // load NodeManager library
 #include "NodeManager.h"
 
-#include <Adafruit_Sensor.h>
-#include <DHT.h>
-#include <DHT_U.h>
+//TODO check if the 3 includes below are indeed obsolete
+//#include <Adafruit_Sensor.h>
+//#include <DHT.h>
+//#include <DHT_U.h>
 
 //Define Sensors, normal way of registering the sensors on the ceiling node
 #define LDR_ROOM
@@ -24,7 +25,7 @@
 //#define PIR_CEILING
 
 
-//@override, remove // to use custom implementation of sensors
+//@override, remove commenting to use custom implementation of sensors
 //#define CUSTOM_LDR
 //#define CUSTOM_DHT22
 //#define CUSTOM_DS18B20
@@ -80,7 +81,6 @@ void before()
 	* Register above your sensors
 	****************************/
 	nodeManager.before();
-
 }
 
 /*******************************************************************************
