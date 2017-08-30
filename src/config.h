@@ -1,7 +1,7 @@
 #ifndef config_h
 #define config_h
 
-//#define UNIT_TEST
+#define UNIT_TEST
 
 /*********************************
 // * SensorNodeCeiling
@@ -9,31 +9,35 @@
 */
 #define SENSOR_1 A0 // LDR
 #define SENSOR_2 A1 // LDR
-
-#define SENSOR_3 2 // PIR SENSOR_MOTION
-
-#define SENSOR_4 4 // DS18B20
-#define SENSOR_5 5 // DHT22
+//#define SENSOR_3 2 // PIR SENSOR_MOTION
+#define SENSOR_4 4 // dht22
+//#define SENSOR_5 5 // Ds18b20
 
 // ** child-id's :
-#define LDR_1_ID 101
-#define LDR_2_ID 102
-#define PIR_1_ID 103
-#define DS18_1_ID 104
-#define DHT_1_ID 105
+#define LDR_1_ID 20
+#define LDR_2_ID 21
+//#define PIR_1_ID 103
+#define DS18_1_ID 1
+#define DHT_1_ID 35
+#define DHT_2_ID 36
 
 /**********************************
  * Sketch configuration
  */
-#define SKETCH_NAME "SensorNodeCeiling"
-#define SKETCH_VERSION "1.7"
+#define SKETCH_NAME "Ceiling Node -A.42- "
+#define SKETCH_VERSION "2.0"
+#define SLEEP_TIME_IN_SECONDS 5
 
 /**********************************
  * MySensors configuration
  */
 #define MY_BAUD_RATE 115200
-#define MY_DEBUG
-#define MY_NODE_ID 112
+//#define MY_DEBUG
+//#define MY_NODE_ID 12 /*  [ X ]  */
+//#define MY_NODE_ID 22 /*  [ X ]  */
+//#define MY_NODE_ID 32 /*  [ X ]  */
+#define MY_NODE_ID 42 /*  []  */
+//#define MY_NODE_ID 52 /*  []  */
 
 #define MY_RADIO_NRF24
 //#define MY_RF24_ENABLE_ENCRYPTION
@@ -50,7 +54,7 @@
 #define SLEEP_MANAGER 1
 
 // if enabled, enable the capability to power on sensors with the arduino's pins to save battery while sleeping
-#define POWER_MANAGER 0
+#define POWER_MANAGER 1
 
 // if enabled, will load the battery manager library to allow the battery level to be reported automatically or on demand
 #define BATTERY_MANAGER 0
@@ -78,7 +82,7 @@
 // Enable this module to use one of the following sensors: SENSOR_SHT21
 #define MODULE_SHT21 0
 // Enable this module to use one of the following sensors: SENSOR_SWITCH, SENSOR_DOOR, SENSOR_MOTION
-#define MODULE_SWITCH 1
+#define MODULE_SWITCH 0
 // Enable this module to use one of the following sensors: SENSOR_DS18B20
 #define MODULE_DS18B20 1
 // Enable this module to use one of the following sensors: SENSOR_BH1750
